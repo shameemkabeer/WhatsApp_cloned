@@ -14,48 +14,52 @@ class _UsertileState extends State<Usertile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return Column(
-            children: [
-              ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: Colors.blueGrey,
-                    backgroundImage: NetworkImage(Chatlists[index].avatar),
-                  ),
-                  title: Text(
-                    Chatlists[index].name,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>
-                          screenpersonalchat(data: Chatlists[index]))),
-                  subtitle: Text(Chatlists[index].lastmessage),
-                  trailing: Column(
-                    children: [
-                      Text(Chatlists[index].time),
-                      SizedBox(
-                        height: 12,
-                      ),
-                      CircleAvatar(
-                        child: Center(
-                          child: Text(Chatlists[index].count.toString()),
+        body: ListView.separated(
+          itemBuilder: (context, index) {
+            return Column(
+              children: [
+                ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.blueGrey,
+                      backgroundImage: NetworkImage(Chatlists[index].avatar),
+                    ),
+                    title: Text(
+                      Chatlists[index].name,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) =>
+                            screenpersonalchat(data: Chatlists[index]))),
+                    subtitle: Text(Chatlists[index].lastmessage),
+                    trailing: Column(
+                      children: [
+                        Text(Chatlists[index].time),
+                        SizedBox(
+                          height: 12,
                         ),
-                        backgroundColor: Colors.blueGrey,
-                        radius: 12,
-                      )
-                    ],
-                  ))
-            ],
-          );
-        },
-        separatorBuilder: (context, index) {
-          return Divider(
-            height: 10.0,
-          );
-        },
-        itemCount: Chatlists.length,
-      ),
-    );
+                        CircleAvatar(
+                          child: Center(
+                            child: Text(Chatlists[index].count.toString()),
+                          ),
+                          backgroundColor: Colors.blueGrey,
+                          radius: 12,
+                        )
+                      ],
+                    ))
+              ],
+            );
+          },
+          separatorBuilder: (context, index) {
+            return Divider(
+              height: 10.0,
+            );
+          },
+          itemCount: Chatlists.length,
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.message),
+          backgroundColor: Colors.blueGrey,
+          onPressed: (() {}),
+        ));
   }
 }

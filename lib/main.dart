@@ -15,6 +15,7 @@ class Myapp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Screensplash(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

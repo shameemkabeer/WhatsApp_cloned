@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:warmapp/Tab_screens/call.dart';
+import 'package:warmapp/Tab_screens/statuspage.dart';
 import 'package:warmapp/Tab_screens/usertiles.dart';
 import 'package:warmapp/datas/chat_models.dart';
 
@@ -22,7 +24,7 @@ class _screenchatsState extends State<screenchats>
   void initState() {
     // TODO: implement initState
     super.initState();
-    _tabController = new TabController(length: 4, initialIndex: 1, vsync: this);
+    _tabController = TabController(length: 4, initialIndex: 1, vsync: this);
   }
 
   @override
@@ -72,8 +74,8 @@ class _screenchatsState extends State<screenchats>
           body: new TabBarView(controller: _tabController, children: [
             Tab(child: Text("Camera")),
             Usertile(userdata: Chatlists.first),
-            Text("data"),
-            Text("sucks")
+            screenstatus(),
+            Screencalls(),
           ]),
         ),
       ),

@@ -21,15 +21,35 @@ class _ScreensplashState extends State<Screensplash> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
         width: double.infinity,
-        color: Colors.blueGrey,
+        height: double.infinity,
+        color: Colors.white,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: 250,
-              backgroundImage: AssetImage("assets/images/picture1.jpeg"),
+            Column(
+              children: [
+                SizedBox(
+                  height: 250,
+                ),
+                Image.asset(
+                  "assets/images/icons8-whatsapp-100(-xhdpi).png",
+                  height: 100.0,
+                  width: 100.0,
+                ),
+                SizedBox(
+                  height: 380,
+                ),
+                Text(
+                  "from",
+                  style: TextStyle(color: Colors.black54),
+                ),
+                Text(
+                  "Shameem Kabeer",
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.end,
+                )
+              ],
             ),
           ],
         ),
@@ -38,7 +58,7 @@ class _ScreensplashState extends State<Screensplash> {
   }
 
   Future<void> loginscreen() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 5));
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => screenchats(userdata: Chatlists.first),
